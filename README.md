@@ -5,6 +5,8 @@ Desafio sobre conceitos do Node.js aplicado no bootcamp Gostack
 ### Conceitos de NodeJS
 
 
-*yarn
-*yarn dev (para executar a aplicação)
-* yarn test (Teste automatizado da aplicação)
+<ul> 
+  <l1>yarn</li>
+<l1>yarn dev (para executar a aplicação)</li>
+<l1> yarn test (Teste automatizado da aplicação)</li>
+</ul>
