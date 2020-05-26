@@ -24,20 +24,63 @@ app.post("/repositories", (request, response) => {
     techs,
     likes: 0
   }
+
+  repositories.push(repository);
   
   return response.json(repository);
 });
 
 app.put("/repositories/:id", (request, response) => {
-  // TODO
+  const { id } = request.params;
+  const {title, url, techs} = request.body;
+
+  const repository = repositories.find( repository => 
+    repository.id === id);
+
+    if(!repository) {
+      return response.status(400).json({ error: 'repository not found'});
+    }
+
+    const repositoryUpdated = {
+      id: repository.id,
+      title,
+      url,
+      techs,
+      likes: repository.likes,
+    }
+
+    return response.json(repositoryUpdated);
 });
 
 app.delete("/repositories/:id", (request, response) => {
-  // TODO
+  const { id } = request.params;
+
+  const repositoryIndex = repositories.findIndex( repository =>
+  repository.id === id);
+
+  if (repositoryIndex < 0 ) { 
+    response.status(400).json({ error: 'repository not found'});
+  }
+
+  repositories.splice(repositoryIndex, 1);
+
+  return response.status(204).send();
 });
 
 app.post("/repositories/:id/like", (request, response) => {
-  // TODO
+   const { id } = request.params;
+
+    const repository = repositories.find(repository =>
+    repository.id === id);
+
+    if(!repository){
+      return response.status(400).json({ error: 'repository not found'});
+    }
+
+    repository.likes += 1;
+
+    return response.json(repository);
+    
 });
 
 module.exports = app;
