@@ -6,7 +6,7 @@ Desafio sobre conceitos do Node.js aplicado no bootcamp Gostack
 
 
 <ul> 
-  <l1>yarn</li> < /br>
-  <l1>yarn dev (para executar a aplicação)</li>< /br>
-  <l1> yarn test (Teste automatizado da aplicação)</li>< /br>
+  <li>yarn</li> < /br>
+  <li>yarn dev (para executar a aplicação)</li>< /br>
+  <li> yarn test (Teste automatizado da aplicação)</li>< /br>
 </ul>
